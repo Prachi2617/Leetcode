@@ -16,7 +16,7 @@ struct Node
 Node *head=new Node;
 class Solution{
     public:
-    //Function to find the height of a binary tree.
+    //---------------1st way-------------------------
     int height(struct Node* node)
     {
         int left=0,right=0;
@@ -28,6 +28,22 @@ class Solution{
             return left+1;
          else
             return right+1;
+    }
+
+    //-------------2nd Way--------------------
+    int height(Node* root)
+    {
+        if(root==NULL)
+            return 0;
+        else
+        {
+            int l=height(root->left);
+            int r=height(root->right);
+            if(l>r)
+                return l+1;
+            else
+                return r+1;
+        }
     }
 };
 
