@@ -1,4 +1,7 @@
 // --------------------ALGORITHM ONLY--------------------
+// 1st approach doesn't work in leetcode so 2nd is the best approach , use that always
+
+
 
 #include<bits/stdc++.h>
 using namespace std;
