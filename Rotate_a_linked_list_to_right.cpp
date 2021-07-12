@@ -1,3 +1,4 @@
+// connect the last node with the first node and then find new head after rotating list by k( k=n-k%n ) 
 class Solution {
 public:
     ListNode* rotateRight(ListNode* head, int k)
