@@ -21,3 +21,12 @@ public:
          return nums[i];
     }
 };
+.............................................................................
+ below function can be used as well 
+while(lo<hi){
+            int mid=(lo+hi)/2;
+            if(nums[mid]>nums[hi]) lo=mid+1;
+            else hi=mid;
+        }
+         return nums[lo];
+
