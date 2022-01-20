@@ -13,26 +13,26 @@ public:
         {
             if (i > 0 && nums[i] == nums[i-1]) 
                 continue;
-            if(target-nums[i]-nums[i+1]-nums[i+2]-nums[i+3]<0) 
+            if((target-nums[i]-nums[i+1])<(nums[i+2]+nums[i+3])) 
                 break;
-            if(target -nums[i]-nums[n-3]-nums[n-2]-nums[n-1]>0) 
+            if((target -nums[i]-nums[n-3])>(nums[n-2]+nums[n-1])) 
                 continue;
             for(j=i+1;j<n-2;j++)
             {
                 if (j > (i+1) && nums[j] == nums[j-1]) 
                     continue;
-                if(target - nums[i]- nums[j]- nums[j+1]- nums[j+2]<0) 
+                if((target - nums[i]- nums[j])<( nums[j+1]+ nums[j+2])) 
                     break;
-                if(target-nums[i]-nums[j]-nums[n-2]-nums[n-1]>0) 
+                if((target-nums[i]-nums[j])>(nums[n-2]+nums[n-1])) 
                     continue;
                 l=j+1;
                 r=n-1;
                 while(l<r)
                 {
-                    int s = nums[i]+nums[j]+nums[l]+nums[r];
-                    if(s<target)
+                    int s = target -nums[i]-nums[j]-nums[l]-nums[r];
+                    if(s>0)
                         l++;
-                    else if(s>target)
+                    else if(s<0)
                         r--;
                     else 
                     {
